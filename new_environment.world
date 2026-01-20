@@ -1,1 +1,102 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="teknofest_mission_world">
 
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <model name="pist">
+      <static>true</static>
+      <pose>0 0 0.01 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>2000 45 0.02</size></box></geometry></collision>
+        <visual name="visual">
+          <geometry><box><size>2000 45 0.02</size></box></geometry>
+          <material>
+            <script><name>Gazebo/Grey</name></script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="hedef_mavi_altigen">
+      <static>true</static>
+      <pose>30 10 0.03 0 0 0</pose> 
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <polyline>
+              <height>0.02</height> <point>2 0</point>
+              <point>1 1.732</point>
+              <point>-1 1.732</point>
+              <point>-2 0</point>
+              <point>-1 -1.732</point>
+              <point>1 -1.732</point>
+              <point>2 0</point> </polyline>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Blue</name></script> </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="hedef_kirmizi_ucgen">
+      <static>true</static>
+      <pose>30 -10 0.03 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <polyline>
+              <height>0.02</height>
+              <point>0 0.577</point>
+              <point>-0.5 -0.288</point>
+              <point>0.5 -0.288</point>
+              <point>0 0.577</point> </polyline>
+          </geometry>
+          <material>
+            <script><name>Gazebo/Red</name></script> </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="yuk_kirmizi">
+      <pose>0 2 0.5 0 0 0</pose> <link name="link">
+        <inertial>
+          <mass>0.5</mass> <inertia> <ixx>0.001</ixx><ixy>0</ixy><ixz>0</ixz>
+            <iyy>0.001</iyy><iyz>0</iyz>
+            <izz>0.001</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry><box><size>0.15 0.15 0.15</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.15 0.15 0.15</size></box></geometry>
+          <material><script><name>Gazebo/Red</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="yuk_mavi">
+      <pose>0 -2 0.5 0 0 0</pose> 
+      <link name="link">
+        <inertial>
+          <mass>0.5</mass>
+          <inertia>
+            <ixx>0.001</ixx><ixy>0</ixy><ixz>0</ixz>
+            <iyy>0.001</iyy><iyz>0</iyz>
+            <izz>0.001</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry><box><size>0.15 0.15 0.15</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.15 0.15 0.15</size></box></geometry>
+          <material><script><name>Gazebo/Blue</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
